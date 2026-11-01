@@ -1,0 +1,7 @@
+{
+  "name": "tensorbasis-integrations",
+  "owner": { "name": "Tensorbasis" },
+  "plugins": [
+    { "name": "tensorbasis", "source": "./claude", "description": "Tensorbasis hosted MCP connection (OAuth deployment verification required)." }
+  ]
+}

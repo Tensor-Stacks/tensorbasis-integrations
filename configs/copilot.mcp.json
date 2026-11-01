@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "tensorbasis": { "type": "http", "url": "https://app.tensorbasis.com/api/mcp" }
+  }
+}

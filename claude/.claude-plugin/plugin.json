@@ -1,0 +1,8 @@
+{
+  "name": "tensorbasis",
+  "version": "0.1.0",
+  "description": "Connect your Tensorbasis account to compare competitor catalogs and prices.",
+  "author": { "name": "Tensorbasis" },
+  "homepage": "https://app.tensorbasis.com/connect",
+  "mcpServers": "./.mcp.json"
+}

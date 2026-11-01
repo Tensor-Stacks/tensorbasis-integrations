@@ -1,0 +1,3 @@
+# OAuth-oriented template: deploy and verify the OAuth server before use.
+[mcp_servers.tensorbasis]
+url = "https://app.tensorbasis.com/api/mcp"
