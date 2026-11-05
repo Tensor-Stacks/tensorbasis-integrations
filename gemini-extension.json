@@ -1,7 +1,14 @@
 {
   "name": "tensorbasis",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "mcpServers": {
-    "tensorbasis": { "httpUrl": "https://app.tensorbasis.com/api/mcp", "trust": false }
-  }
+    "tensorbasis": {
+      "httpUrl": "https://app.tensorbasis.com/api/mcp",
+      "trust": false
+    }
+  },
+  "contextFileName": [
+    "skills/match-review/SKILL.md",
+    "skills/price-gap-report/SKILL.md"
+  ]
 }
