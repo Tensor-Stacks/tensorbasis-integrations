@@ -1,0 +1,8 @@
+{
+  "name": "tensorbasis-integrations",
+  "owner": { "name": "Tensorbasis" },
+  "metadata": { "description": "Tensorbasis saved-data reports and human match-review worksheets." },
+  "plugins": [
+    { "name": "tensorbasis", "source": "./cursor", "description": "Read saved Tensorbasis price comparisons and prepare human match-review worksheets." }
+  ]
+}

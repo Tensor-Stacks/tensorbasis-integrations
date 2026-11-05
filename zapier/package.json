@@ -1,0 +1,11 @@
+{
+  "name": "tensorbasis-zapier-read-only",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Private Zapier Platform CLI source candidate for saved Tensorbasis reads; not a published Zapier app.",
+  "main": "index.js",
+  "engines": { "node": ">=22" },
+  "dependencies": { "zapier-platform-core": "19.3.0" },
+  "devDependencies": { "zapier-platform-cli": "19.3.0" },
+  "scripts": { "validate": "zapier validate" }
+}

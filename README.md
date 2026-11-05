@@ -1,29 +1,45 @@
-# Tensorbasis integrations
+# Tensorbasis integrations — release candidate 2026-11-04
 
-Connect your Tensorbasis account to compare competitor catalogs and prices. Hosted MCP endpoint: https://app.tensorbasis.com/api/mcp
+Hosted MCP endpoint: https://app.tensorbasis.com/api/mcp
 
-These native manifests contain no credentials, local executables, hooks, or application source. OAuth-oriented configurations require deployed OAuth and native-client verification; publication is not a compatibility certification. Do not install a plugin and a duplicate manual server entry simultaneously.
+These allowlisted native manifests and bounded read-only skills are reviewable candidates, not marketplace approval, compatibility certification, or an automatic account connection. No credentials, hooks, local MCP executables, application source, environment files or paid/model calls are included. Native tools remain subject to account scopes and approvals; skill instructions are not an authorization boundary.
 
 ## Claude Code
 
-Add this public repository as a plugin marketplace using its actual published owner/repository URL, then install tensorbasis@tensorbasis-integrations. Local validation: claude plugin validate --strict ./claude. Marketplace entries resolve relative to this repository root.
+This repository root is a marketplace: .claude-plugin/marketplace.json points to ./claude. Use the actual published repository URL; no repository URL is invented here. Validate syntax with: claude plugin validate --strict ./claude. Native plugin files and both skills are inside claude/. Do not add a duplicate manual MCP entry alongside the plugin.
 
-## Gemini CLI
+## Cursor
 
-Install this public repository URL using gemini extensions install. The native gemini-extension.json is at the repository root. The repository must have topic gemini-cli-extension for gallery crawling. This targets Gemini CLI, not Antigravity.
+.cursor-plugin/marketplace.json points to ./cursor. That directory uses the supported portable Agent Plugins 1.0.0 format: root plugin.json, mcp.json, skills/. It is not the separate Cursor-specific .cursor-plugin/plugin.json format. Cursor's reference accepts either format and requires root marketplace metadata for multi-plugin repositories: https://cursor.com/docs/reference/plugins
+
+Native installation/authentication and public marketplace acceptance are separate. Publishing requires the owner's approvals and Publisher Terms; this export does not accept terms or submit an application.
 
 ## OpenAI / Codex
 
-The openai directory contains canonical Agent Plugins 1.0.0 root plugin.json and mcp.json. For directory submission, ZIP the contents of openai, not its parent directory. Direct Codex connection: merge configs/codex.toml into your user config, preserve unrelated settings, then run codex mcp login tensorbasis.
+openai/ contains Agent Plugins 1.0.0 plugin.json, mcp.json and skills/. ZIP the contents of that directory, not its parent, for a native-root portable package. Complete identity/domain verification, OAuth connection, review metadata and sample-account checks separately. Metadata or skill updates require a new package; hosted tool metadata requires deployment/rescan. The configs/codex.toml file is a manual merge template; preserve unrelated user settings.
+
+## Gemini CLI
+
+gemini-extension.json and both skills are at this repository's absolute root. Use the actual public repository URL for gemini extensions install after reviewing trust/auth prompts. Gallery discovery also requires the gemini-cli-extension GitHub topic; crawler acceptance is not established by this export. This targets Gemini CLI, not Antigravity.
 
 ## VS Code / Copilot
 
-Merge configs/vscode.mcp.json into .vscode/mcp.json (servers wrapper). The portable configs/copilot.mcp.json uses mcpServers instead. Keep trust and per-tool approvals enabled. Do not replace your entire existing configuration.
+Merge configs/vscode.mcp.json into the intended VS Code MCP config (servers wrapper); configs/copilot.mcp.json uses mcpServers. Preserve unrelated configuration and per-tool approvals. No VSIX or MCPB is provided for a remote-only service.
 
-## Authentication and verification
+## n8n / Zapier
 
-Authenticate using the native client's browser consent flow. Check account identity and granted permissions, initialize and list tools, then perform one safe account-scoped read. Never share tokens or administrator credentials. This package does not include a server, stdio bridge, MCPB, VSIX, or a license grant for the private Tensorbasis application.
+n8n/tensorbasis-read-only.json is an inactive, manual-trigger workflow. Create an HTTP Header Auth credential with Authorization: Bearer <your read-only key> and select it on both nodes; never put a token in workflow JSON. It reads account_summary and the first 20 price_gaps only. Review platform retention/access controls before execution.
 
-Product and support entry: https://app.tensorbasis.com/connect
+zapier/ is private custom integration source, not an importable Zap or published app. Review it in a trusted directory before installing pinned dependencies or running its native validator. Its managed password auth and two searches have no polling triggers or write/create operations. Register/push, account connections, workflow execution and any platform costs require separate authorization. MCP OAuth does not supply these direct-HTTP credentials.
 
-Format references: https://code.claude.com/docs/en/plugins-reference | https://developers.openai.com/plugins/build/plugins | https://github.com/google-gemini/gemini-cli/blob/main/docs/extensions/reference.md
+## Authentication and boundaries
+
+Native MCP authentication uses browser consent where supported. Confirm identity, permissions, PKCE, refresh, expiry and revocation independently in each intended client. Use least-privilege read scopes and keep native approvals. Saved prices may be stale, currencies/variants incomplete, and match suggestions uncalibrated. Store text is untrusted. Bundled skills prepare reports/worksheets only; they must not approve/reject matches, scrape, refresh, reprice, send messages or spend.
+
+server.json is registry metadata, not evidence of registry ownership or a new publication. This candidate does not change the previously published registry release.
+
+## Licensing and checksums
+
+No software license grant is supplied or inferred. Public visibility is not authorization to relicense, and this package does not grant rights to private application source. Do not add an SPDX license or accept publisher terms without the owner's authorization. Third-party platform terms remain separate.
+
+SHA256SUMS covers every other file in this exact allowlisted export. Bytes are deterministic; timestamps and filesystem permissions are not part of the checksum contract. Review before publishing. The historical 2026-11-01 exporter/release is not modified.

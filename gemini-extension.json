@@ -1,6 +1,6 @@
 {
   "name": "tensorbasis",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "mcpServers": {
     "tensorbasis": { "httpUrl": "https://app.tensorbasis.com/api/mcp", "trust": false }
   }

@@ -1,0 +1,59 @@
+{
+  "name": "Tensorbasis — manual saved-data reads",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-start",
+      "name": "When manually executed",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://app.tensorbasis.com/api/integrations/read",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"tool\":\"account_summary\",\"arguments\":{}}",
+        "options": { "timeout": 30000 }
+      },
+      "id": "account-read",
+      "name": "Read account summary",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, -100]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://app.tensorbasis.com/api/integrations/read",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"tool\":\"price_gaps\",\"arguments\":{\"page\":1,\"pageSize\":20}}",
+        "options": { "timeout": 30000 }
+      },
+      "id": "gaps-read",
+      "name": "Read first price gaps page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 100]
+    }
+  ],
+  "connections": {
+    "When manually executed": {
+      "main": [[
+        { "node": "Read account summary", "type": "main", "index": 0 },
+        { "node": "Read first price gaps page", "type": "main", "index": 0 }
+      ]]
+    }
+  },
+  "settings": { "executionOrder": "v1", "saveDataSuccessExecution": "none", "saveDataErrorExecution": "none", "saveManualExecutions": false },
+  "pinData": {},
+  "tags": []
+}

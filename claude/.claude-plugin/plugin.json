@@ -1,6 +1,6 @@
 {
   "name": "tensorbasis",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Connect your Tensorbasis account to compare competitor catalogs and prices.",
   "author": { "name": "Tensorbasis" },
   "homepage": "https://app.tensorbasis.com/connect",

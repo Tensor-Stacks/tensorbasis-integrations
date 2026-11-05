@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Tensor-Stacks/tensorbasis",
+  "title": "Tensorbasis",
+  "description": "Retail competitor intelligence: compare prices, review matches, and track catalog changes.",
+  "version": "0.1.0",
+  "websiteUrl": "https://tensorbasis.com/docs/mcp",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://app.tensorbasis.com/api/mcp"
+    }
+  ]
+}

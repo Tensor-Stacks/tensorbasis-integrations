@@ -1,0 +1,8 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "tensorbasis",
+  "version": "0.2.0",
+  "description": "Read saved Tensorbasis price gaps and prepare human match-review worksheets.",
+  "author": { "name": "Tensorbasis" },
+  "homepage": "https://app.tensorbasis.com/connect"
+}
